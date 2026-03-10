@@ -41,3 +41,26 @@ section {
 	justify-content: center;
 	align-items: center;
 }
+.selectbtn {
+	border: 1px solid var(--lightgrey);
+	color: var(--white);
+	padding: 2.5px 7.5px;
+	border-radius: 8px;
+	background-color: var(--black);
+}
+.logowithtext {
+	display: none;
+}
+.logowithouttext {
+	display: block;
+}
+.gamemodes {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.infoandgamemode {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
