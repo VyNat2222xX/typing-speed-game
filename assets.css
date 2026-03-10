@@ -1,0 +1,18 @@
+/* C O L O R */
+
+:root {
+	--red: #d64d5b;
+	--green: #4dd67b;
+	--yellow: #f4dc73;
+	--blue: #177dff;
+	--lightblue: #4ca6ff;
+	--black: #121212;
+	--darkgrey: #262626;
+	--grey: #717178;
+	--lightgrey: #949497;
+	--white: #ffffff;
+}
+body {
+	font-family: "Sora";
+	color: var(--white);
+}

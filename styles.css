@@ -1,0 +1,43 @@
+body {
+	background-color: var(--black);
+}
+section {
+	padding: 10px;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.result {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.resulttext {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.resulttext p {
+	color: var(--lightgrey);
+}
+.white {
+	color: var(--white);
+}
+.lightgrey {
+	color: var(--lightgrey);
+}
+.hrlightgrey {
+	border: 1px solid #3a3a3a;
+}
+.info {
+	display: flex;
+	justify-content: space-evenly;
+}
+.info div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
