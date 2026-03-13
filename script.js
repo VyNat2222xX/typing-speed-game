@@ -194,3 +194,12 @@ const hardtable = [
 ];
 
 // Q U E R R Y  S E L E C T O R S
+
+let $h3timer = document.querySelector("#timer");
+const $btnstart = document.querySelector("#btnstart");
+const $dialogstart = document.querySelector("#dialogstart");
+
+$btnstart.addEventListener("click", () => {
+	console.log("Starting test...");
+	$dialogstart.close();
+});

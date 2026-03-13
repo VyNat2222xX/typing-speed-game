@@ -208,7 +208,7 @@
                 <hr class="hrlightgrey" />
                 <div>
                     <p class="lightgrey">Time:</p>
-                    <h3>0:60</h3>
+                    <h3 id="timer">0:60</h3>
                 </div>
             </div>
             <div class="gamemodes">
@@ -219,7 +219,15 @@
             </div>
             <hr class="hrlightgrey" />
         </section>
+        <section>
+            <dialog class="startdialog" id="dialogstart" open>
+                <button class="bluebtn" id="btnstart">Start Typing Test</button>
+                <p class="white">Or click the text and start typing</p>
+            </dialog>
+            <textarea id="content"></textarea>
+        </section>
     </main>
 </body>
+<script src="script.js"></script>
 
 </html>
