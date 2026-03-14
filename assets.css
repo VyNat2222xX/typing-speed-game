@@ -16,3 +16,10 @@ body {
 	font-family: "Sora";
 	color: var(--white);
 }
+.fail {
+	color: var(--red);
+	text-decoration: underline;
+}
+.correct {
+	color: var(--green);
+}

@@ -193,7 +193,7 @@ const hardtable = [
 	"causalité",
 ];
 
-// Q U E R R Y  S E L E C T O R S
+// Q U E R R Y  S E L E C T O R S  A N D  O T H E R S
 
 let time = 60;
 

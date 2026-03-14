@@ -86,7 +86,7 @@ textarea {
 	width: 100%;
 	background-color: transparent;
 	resize: none;
-	height: 400px;
+	height: 100px;
 	color: var(--white);
 	border: none;
 }
