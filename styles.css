@@ -48,6 +48,13 @@ section {
 	border-radius: 8px;
 	background-color: var(--black);
 }
+.selectbtnactive {
+	border: 1px solid var(--blue);
+	color: var(--blue);
+	padding: 2.5px 7.5px;
+	border-radius: 8px;
+	background-color: var(--black);
+}
 .logowithtext {
 	display: none;
 }

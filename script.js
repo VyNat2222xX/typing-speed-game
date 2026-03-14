@@ -196,10 +196,18 @@ const hardtable = [
 // Q U E R R Y  S E L E C T O R S  A N D  O T H E R S
 
 let time = 60;
+let difficulty = "";
+
+// check pour debuggage
+console.log(difficulty);
+randomWord();
 
 let $h3timer = document.querySelector("#timer");
 const $btnstart = document.querySelector("#btnstart");
 const $dialogstart = document.querySelector("#dialogstart");
+const $btneasy = document.querySelector("#easy");
+const $btnmedium = document.querySelector("#medium");
+const $btnhard = document.querySelector("#hard");
 
 $btnstart.addEventListener("click", () => {
 	console.log("Starting test...");
@@ -230,3 +238,65 @@ function timer() {
 	}, 1000)
 
 }
+
+// Difficuly selection
+
+$btneasy.addEventListener("click", () => {
+	$btneasy.classList.remove("selectbtn");
+	$btneasy.classList.add("selectbtnactive");
+	$btnmedium.classList.remove("selectbtnactive");
+	$btnmedium.classList.add("selectbtn");
+	$btnhard.classList.remove("selectbtnactive");
+	$btnhard.classList.add("selectbtn");
+	let difficulty = "easy";
+	console.log(difficulty);
+	randomWord();
+});
+$btnmedium.addEventListener("click", () => {
+	$btneasy.classList.remove("selectbtnactive");
+	$btneasy.classList.add("selectbtn");
+	$btnmedium.classList.remove("selectbtn");
+	$btnmedium.classList.add("selectbtnactive");
+	$btnhard.classList.remove("selectbtnactive");
+	$btnhard.classList.add("selectbtn");
+	let difficulty = "medium";
+	console.log(difficulty);
+	randomWord();
+});
+$btnhard.addEventListener("click", () => {
+	$btneasy.classList.remove("selectbtnactive");
+	$btneasy.classList.add("selectbtn");
+	$btnmedium.classList.remove("selectbtnactive");
+	$btnmedium.classList.add("selectbtn");
+	$btnhard.classList.remove("selectbtn");
+	$btnhard.classList.add("selectbtnactive");
+	let difficulty = "hard";
+	console.log(difficulty);
+	randomWord();
+});
+
+function randomWord() {
+	if (difficulty == "easy") {
+		console.log(easytable)
+		// code pour afficher les mots de la table easytable
+	}
+	else if (difficulty == "medium") {
+		console.log(mediumtable)
+		// code pour afficher les mots de la table mediumtable
+	}
+	else if (difficulty == "hard") {
+		console.log(hardtable)
+		// code pour afficher les mots de la table hardtable
+	}
+	else {
+		console.error("Error: difficulty = null, please select a difficulty level, otherwise the speed type test won't work");
+	}
+}
+
+/* 
+1. Choisir et memoriser la dificulté selectionner. 										  	|DONE
+2. Choisir des mots aléatoires de la table correspondante. 								  	|IN PROGRESS (il faut encore faire le lien entre la difficulté selectionnée et la table de mots correspondante)
+3. Découper les lettres des mots en <span> et les afficher. 							  	|TODO
+4. Vérifier la saisie de l'utilisateur et colorer les mots en vert ou rouge selon le cas. 	|TODO
+5. Afficher les résultats à la fin du test (Word Per Minute et Accuracy). 				  	|TODO
+*/
