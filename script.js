@@ -208,8 +208,6 @@ $btnstart.addEventListener("click", () => {
 });
 
 function timer() {
-	console.log("Starting timer...");
-
 	setInterval(() => {
 		time--;
 		$h3timer.textContent = "0:" + time;
