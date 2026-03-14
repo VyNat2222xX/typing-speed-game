@@ -195,7 +195,7 @@ const hardtable = [
 
 // Q U E R R Y  S E L E C T O R S
 
-let time = 2;
+let time = 60;
 
 let $h3timer = document.querySelector("#timer");
 const $btnstart = document.querySelector("#btnstart");
