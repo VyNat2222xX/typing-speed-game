@@ -208,7 +208,8 @@ $btnstart.addEventListener("click", () => {
 });
 
 function timer() {
-	setInterval(() => {
+
+	const timer = setInterval ( () => {
 		time--;
 		$h3timer.textContent = "0:" + time;
 
@@ -222,8 +223,10 @@ function timer() {
 		if (time <= 9) {
 			$h3timer.textContent = "0:0" + time;
 		}
-		if (time == 0) {
+		if (time == 1) {
 			console.log("Stopping test... ");
+			clearInterval();
 		}
-	}, 1000);
+	}, 1000)
+
 }
