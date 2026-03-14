@@ -213,19 +213,19 @@ function timer() {
 		time--;
 		$h3timer.textContent = "0:" + time;
 
-		if (time == 40) {
+		if (time < 40) {
 			$h3timer.classList.add("orange");
 		}
-		if (time == 20) {
+		if (time < 20) {
 			$h3timer.classList.remove("orange");
 			$h3timer.classList.add("red");
 		}
 		if (time <= 9) {
 			$h3timer.textContent = "0:0" + time;
 		}
-		if (time == 1) {
+		if (time == 0) {
 			console.log("Stopping test... ");
-			clearInterval();
+			clearInterval(timer);
 		}
 	}, 1000)
 
