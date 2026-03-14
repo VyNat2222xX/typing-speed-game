@@ -90,3 +90,9 @@ textarea {
 	color: var(--white);
 	border: none;
 }
+.red {
+	color: var(--red);
+}
+.orange {
+	color: var(--yellow);
+}

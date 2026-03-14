@@ -195,6 +195,8 @@ const hardtable = [
 
 // Q U E R R Y  S E L E C T O R S
 
+let time = 2;
+
 let $h3timer = document.querySelector("#timer");
 const $btnstart = document.querySelector("#btnstart");
 const $dialogstart = document.querySelector("#dialogstart");
@@ -202,4 +204,28 @@ const $dialogstart = document.querySelector("#dialogstart");
 $btnstart.addEventListener("click", () => {
 	console.log("Starting test...");
 	$dialogstart.close();
+	timer();
 });
+
+function timer() {
+	console.log("Starting timer...");
+
+	setInterval(() => {
+		time--;
+		$h3timer.textContent = "0:" + time;
+
+		if (time == 40) {
+			$h3timer.classList.add("orange");
+		}
+		if (time == 20) {
+			$h3timer.classList.remove("orange");
+			$h3timer.classList.add("red");
+		}
+		if (time <= 9) {
+			$h3timer.textContent = "0:0" + time;
+		}
+		if (time == 0) {
+			console.log("Stopping test... ");
+		}
+	}, 1000);
+}
