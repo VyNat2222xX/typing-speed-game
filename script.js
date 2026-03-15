@@ -195,7 +195,7 @@ const hardtable = [
 
 // Q U E R R Y  S E L E C T O R S  A N D  O T H E R S
 
-let difficulty = "";
+let difficulty = "easy";
 let time = 60;
 
 let $h3timer = document.querySelector("#timer");
@@ -204,11 +204,16 @@ const $dialogstart = document.querySelector("#dialogstart");
 const $btneasy = document.querySelector("#easy");
 const $btnmedium = document.querySelector("#medium");
 const $btnhard = document.querySelector("#hard");
+const $wordcontainer = document.querySelector("#wordcontainer");
 
 $btnstart.addEventListener("click", () => {
 	console.log("Starting test...");
 	$dialogstart.close();
 	timer();
+	randomWord();
+	$btneasy.disabled = true;
+	$btnmedium.disabled = true;
+	$btnhard.disabled = true;
 });
 
 function timer() {
@@ -237,7 +242,7 @@ function timer() {
 
 }
 
-// Difficuly selection
+// DIFFICULTY SELECTION
 
 $btneasy.addEventListener("click", () => {
 	$btneasy.classList.remove("selectbtn");
@@ -248,7 +253,6 @@ $btneasy.addEventListener("click", () => {
 	$btnhard.classList.add("selectbtn");
 	let difficulty = "easy";
 	console.log(difficulty);
-	randomWord();
 });
 $btnmedium.addEventListener("click", () => {
 	$btneasy.classList.remove("selectbtnactive");
@@ -259,7 +263,6 @@ $btnmedium.addEventListener("click", () => {
 	$btnhard.classList.add("selectbtn");
 	let difficulty = "medium";
 	console.log(difficulty);
-	randomWord();
 });
 $btnhard.addEventListener("click", () => {
 	$btneasy.classList.remove("selectbtnactive");
@@ -270,31 +273,48 @@ $btnhard.addEventListener("click", () => {
 	$btnhard.classList.add("selectbtnactive");
 	let difficulty = "hard";
 	console.log(difficulty);
-	randomWord();
 });
 
 function randomWord() {
+
 	if (difficulty == "easy") {
-		console.log(easytable)
-		// code pour afficher les mots de la table easytable
+		for (let i = 0; i < easytable.length; i++) {
+			const randomIndex = Math.floor(Math.random() * easytable.length);
+			const $span = document.createElement("span");
+			$span.textContent = easytable[randomIndex] + " ";
+			$wordcontainer.appendChild($span);
+		}
 	}
+
 	else if (difficulty == "medium") {
-		console.log(mediumtable)
-		// code pour afficher les mots de la table mediumtable
+		for (let i = 0; i < mediumtable.length; i++) {
+			const randomIndex = Math.floor(Math.random() * mediumtable.length);
+			const $span = document.createElement("span");
+			$span.textContent = mediumtable[randomIndex] + " ";
+			$wordcontainer.appendChild($span);
+		}
 	}
+
 	else if (difficulty == "hard") {
-		console.log(hardtable)
-		// code pour afficher les mots de la table hardtable
+		for (let i = 0; i < hardtable.length; i++) {
+			const randomIndex = Math.floor(Math.random() * hardtable.length);
+			const $span = document.createElement("span");
+			$span.textContent = hardtable[randomIndex] + " ";
+			$wordcontainer.appendChild($span);
+		}
 	}
+
 	else {
 		console.error("Error: difficulty = null, please select a difficulty level, otherwise the speed type test won't work");
 	}
 }
 
 /* 
-1. Choisir et memoriser la dificulté selectionner. 										  	|DONE
-2. Choisir des mots aléatoires de la table correspondante. 								  	|IN PROGRESS (il faut encore faire le lien entre la difficulté selectionnée et la table de mots correspondante)
-3. Découper les lettres des mots en <span> et les afficher. 							  	|TODO
-4. Vérifier la saisie de l'utilisateur et colorer les mots en vert ou rouge selon le cas. 	|TODO
-5. Afficher les résultats à la fin du test (Word Per Minute et Accuracy). 				  	|TODO
+1. Choisir et memoriser la dificulté selectionner. 										  		|DONE.
+2. Choisir des mots aléatoires de la table correspondante. 								  		|DONE.
+3. Découper les lettres des mots en <span> et les afficher. 							  		|WE'RE GONNA SAY ITS DONE...
+4. Vérifier la saisie de l'utilisateur et colorier les lettres en vert ou rouge selon le cas. 	|IN PROGRESS...
+5. Afficher les résultats à la fin du test ("Word Per Minute" et "Accuracy"). 					|TODO.
 */
+
+// LE GAMEMODE A ETAIT FORCER EN "EASY" POUR LE MOMENT! (Ln 198, Col 18 à 24) (Fait sans l'extension "Prettier", le code ne sera pas fait correctement.)

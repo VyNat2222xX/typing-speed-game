@@ -96,10 +96,18 @@ textarea {
 	height: 100px;
 	color: var(--white);
 	border: none;
+	color: transparent;
+	opacity: 0%;
+}
+textarea :focus {
+	outline: none;
 }
 .red {
 	color: var(--red);
 }
 .orange {
 	color: var(--yellow);
+}
+.words {
+	background-color: transparent;
 }
