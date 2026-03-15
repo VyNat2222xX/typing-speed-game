@@ -195,12 +195,8 @@ const hardtable = [
 
 // Q U E R R Y  S E L E C T O R S  A N D  O T H E R S
 
-let time = 60;
 let difficulty = "";
-
-// check pour debuggage
-console.log(difficulty);
-randomWord();
+let time = 60;
 
 let $h3timer = document.querySelector("#timer");
 const $btnstart = document.querySelector("#btnstart");
@@ -216,6 +212,8 @@ $btnstart.addEventListener("click", () => {
 });
 
 function timer() {
+
+	console.log("Current difficulty: " + difficulty);
 
 	const timer = setInterval ( () => {
 		time--;
